@@ -19,7 +19,7 @@ client.on('messageCreate', (message) => {
     if(message.author.bot) {
         return;
     }
-    if (message.content === 'u gay') {
+    if (message.content === 'u cute') {
     message.reply('no u')
     return;
     }
@@ -27,7 +27,7 @@ client.on('messageCreate', (message) => {
         return;
     }
     if (message.content === 'no u') {
-    message.reply('no, ur mum')
+    message.reply('no, u')
     return;
     }
 });
