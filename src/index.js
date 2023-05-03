@@ -17,46 +17,50 @@ client.on ('ready', (c) => {
 client.on('messageCreate', (message) => {
 
     if(message.author.bot) {
-        return;
+    return;
     }
     if (message.content === 'u cute') {
-    message.reply('no u')
+        message.reply('no u')
     return;
     }
     if(message.author.bot) {
-        return;
+    return;
     }
     if (message.content === 'no u') {
-    message.reply('no, u')
+        message.reply('no, u')
     return;
     }
     if (message.content === 'no u') {
         message.reply('no, ur mum')
-        return;
+    return;
     }
     if (message.content === 'hello') {
         message.reply('heya nerd <3')
-        return;
+    return;
     }
     if (message.content === 'hi') {
         message.reply('yooo')
-        return;
-                }
+    return;
+    }
     if (message.content === 'hii') {
         message.reply('yohoo')
-        return;
-        }
+    return;
+    }
     if (message.content === 'thanks') {
         message.reply('no problem!')
-        return;
+    return;
     }
     if (message.content === 'ty') {
         message.reply('np!')
-        return;
+    return;
     }
     if (message.content === 'tnx') {
         message.reply('no problem!')
-        return;
+    return;
+    }
+    if (message.content === '❤️') {
+        message.reply('❤️')
+    return;
     }
 });
 
