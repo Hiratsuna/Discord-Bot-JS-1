@@ -62,6 +62,10 @@ client.on('messageCreate', (message) => {
         message.reply('❤️')
     return;
     }
+    if (message.content === 'jerry laugh my darling') {
+        message.reply('kekwkekwkekwkekwkekw :kekw: :kekw:')
+    return;
+    }
 });
 
 client.login(process.env.TOKEN);
