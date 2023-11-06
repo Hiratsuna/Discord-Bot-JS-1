@@ -13,6 +13,7 @@ const client = new Client({
 });
 
 let items = []; // Declare items outside the main function
+const maxItems = 100; // Set a maximum limit for the number of stored items
 
 (async function main() {
     // Make a new RSS Parser
@@ -32,6 +33,11 @@ let items = []; // Declare items outside the main function
     await Promise.all(feed.items.map(async (currentItem) => {
         if (items.filter((item) => isEquivalent(item, currentItem)).length <= 0) {
             items.push(currentItem);
+
+            // Check if the items array exceeds the maximum limit, and if so, remove the oldest item
+            if (items.length > maxItems) {
+                items.shift(); // Remove the oldest item from the beginning of the array
+            }
         }
     }));
 
@@ -67,7 +73,7 @@ function isEquivalent(a, b) {
 client.on('ready', async () => {
     const channel = client.channels.cache.get('1169670948685893795'); // Replace with your channel ID
     if (channel) {
-        channel.send(`🤡 ${client.user.tag} is ready, nerds!`) &&
+        channel.send(`🤡 i got restarted hehe`) &&
             console.log(`🤡 ${client.user.tag} is ready, nerds!`);;
     }
 
@@ -92,6 +98,10 @@ client.on('ready', async () => {
                     channel.send(item.title + ' ' + item.link);
                     // Add the item to your items array to track it
                     items.push(item);
+                } else {
+                    // If the item already exists in your items array, you can break the loop
+                    // because all subsequent items will also exist in the array.
+                    break;
                 }
             }
         } catch (error) {
